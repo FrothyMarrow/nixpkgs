@@ -259,6 +259,7 @@
   ./programs/oblogout.nix
   ./programs/oddjobd.nix
   ./programs/openvpn3.nix
+  ./programs/obs-studio.nix
   ./programs/partition-manager.nix
   ./programs/plotinus.nix
   ./programs/pqos-wrapper.nix
@@ -1251,6 +1252,7 @@
   ./services/networking/uptermd.nix
   ./services/networking/v2ray.nix
   ./services/networking/v2raya.nix
+  ./services/networking/veilid.nix
   ./services/networking/vdirsyncer.nix
   ./services/networking/vsftpd.nix
   ./services/networking/wasabibackend.nix

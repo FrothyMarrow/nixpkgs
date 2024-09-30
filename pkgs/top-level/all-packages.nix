@@ -293,10 +293,6 @@ with pkgs;
 
   ares-rs = callPackage ../tools/security/ares-rs { };
 
-  arti = callPackage ../tools/security/arti {
-    inherit (darwin.apple_sdk.frameworks) CoreServices;
-  };
-
   asn1c = callPackage ../development/compilers/asn1c { };
 
   authz0 = callPackage ../tools/security/authz0 { };
@@ -2408,8 +2404,6 @@ with pkgs;
   guilt = callPackage ../applications/version-management/guilt { };
 
   gut = callPackage ../applications/version-management/gut { };
-
-  hred = callPackage ../development/tools/hred { };
 
   hub = callPackage ../applications/version-management/hub { };
 
@@ -7177,8 +7171,6 @@ with pkgs;
 
   eff = callPackage ../development/interpreters/eff { };
 
-  eflite = callPackage ../applications/audio/eflite { };
-
   eid-mw = callPackage ../tools/security/eid-mw {
     autoreconfHook = buildPackages.autoreconfHook269;
   };
@@ -7206,8 +7198,6 @@ with pkgs;
   };
 
   mcrcon = callPackage ../tools/networking/mcrcon { };
-
-  mozillavpn = qt6Packages.callPackage ../tools/networking/mozillavpn { };
 
   mozwire = callPackage ../tools/networking/mozwire {
     inherit (darwin.apple_sdk.frameworks) CoreServices Security;
@@ -11339,8 +11329,8 @@ with pkgs;
   tautulli = python3Packages.callPackage ../servers/tautulli { };
 
   pleroma = callPackage ../servers/pleroma {
-    elixir = elixir_1_14;
-    beamPackages = beamPackages.extend (self: super: { elixir = elixir_1_14; });
+    elixir = elixir_1_17;
+    beamPackages = beamPackages.extend (self: super: { elixir = elixir_1_17; });
   };
 
   plfit = callPackage ../tools/misc/plfit {
@@ -14299,8 +14289,6 @@ with pkgs;
 
   agdsn-zsh-config = callPackage ../shells/zsh/agdsn-zsh-config { };
 
-  nix-your-shell = callPackage ../shells/nix-your-shell { };
-
   bash = lowPrio (callPackage ../shells/bash/5.nix { });
   # WARNING: this attribute is used by nix-shell so it shouldn't be removed/renamed
   bashInteractive = callPackage ../shells/bash/5.nix {
@@ -15984,10 +15972,10 @@ with pkgs;
   swiftPackages = recurseIntoAttrs (callPackage ../development/compilers/swift { });
   inherit (swiftPackages) swift swiftpm sourcekit-lsp swift-format swiftpm2nix;
 
-  swiProlog = callPackage ../development/compilers/swi-prolog {
+  swi-prolog = callPackage ../development/compilers/swi-prolog {
     inherit (darwin.apple_sdk.frameworks) Security;
   };
-  swiPrologWithGui = swiProlog.override { withGui = true; };
+  swi-prolog-gui = swi-prolog.override { withGui = true; };
 
   tbb_2020_3 = callPackage ../development/libraries/tbb/2020_3.nix { };
   tbb_2021_5 = callPackage ../development/libraries/tbb/2021_5.nix { } ;
@@ -17875,8 +17863,6 @@ with pkgs;
   gradle_7 = wrapGradle gradle_7-unwrapped;
   gradle_8 = wrapGradle gradle_8-unwrapped;
   gradle = wrapGradle gradle-unwrapped;
-
-  grcov = callPackage ../development/tools/misc/grcov { };
 
   gperf = callPackage ../development/tools/misc/gperf { };
   # 3.1 changed some parameters from int to size_t, leading to mismatches.
@@ -25024,6 +25010,19 @@ with pkgs;
       if stdenv.cc.isClang then llvmPackages.stdenv else stdenv;
   };
 
+  mongodb-7_0 = darwin.apple_sdk_11_0.callPackage ../servers/nosql/mongodb/7.0.nix {
+    sasl = cyrus_sasl;
+    boost = boost179.override { enableShared = false; };
+    inherit (darwin.apple_sdk.frameworks) CoreFoundation Security;
+    stdenv = if stdenv.hostPlatform.isDarwin then
+      darwin.apple_sdk_11_0.stdenv.override (old: {
+        hostPlatform = old.hostPlatform // { darwinMinVersion = "10.14"; };
+        buildPlatform = old.buildPlatform // { darwinMinVersion = "10.14"; };
+        targetPlatform = old.targetPlatform // { darwinMinVersion = "10.14"; };
+      }) else
+      if stdenv.cc.isClang then llvmPackages.stdenv else stdenv;
+  };
+
   immudb = callPackage ../servers/nosql/immudb { };
 
   influxdb = callPackage ../servers/nosql/influxdb { };
@@ -28697,8 +28696,6 @@ with pkgs;
     calicoctl
     confd-calico;
 
-  calligra = libsForQt5.callPackage ../applications/office/calligra { };
-
   perkeep = callPackage ../applications/misc/perkeep { };
 
   canto-curses = callPackage ../applications/networking/feedreaders/canto-curses { };
@@ -31259,8 +31256,6 @@ with pkgs;
   minitube = libsForQt5.callPackage ../applications/video/minitube { };
 
   mimic = callPackage ../applications/audio/mimic { };
-
-  mission-center = callPackage ../applications/misc/mission-center { };
 
   meh = callPackage ../applications/graphics/meh { };
 

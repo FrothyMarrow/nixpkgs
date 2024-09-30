@@ -1016,6 +1016,12 @@
     githubId = 50754358;
     name = "Alex Winter";
   };
+  alfarel = {
+    email = "alfarelcynthesis@proton.me";
+    github = "alfarelcynthesis";
+    githubId = 104072649;
+    name = "Cynth";
+  };
   algram = {
     email = "aliasgram@gmail.com";
     github = "Algram";
@@ -6584,6 +6590,13 @@
     githubId = 195032;
     name = "Eric Evenchick";
   };
+  eveeifyeve = {
+    name = "Eveeifyeve";
+    github = "eveeifyeve";
+    githubId = 88671402;
+    matrix = "@eveeifyeve:matrix.org";
+    email = "eveeg1971@gmail.com";
+  };
   evenbrenden = {
     email = "packages@anythingexternal.com";
     github = "evenbrenden";
@@ -6919,6 +6932,12 @@
       { fingerprint = "lX5ewVcaQLxuzqI92gujs3jFNki4d8qF+PATexMijoQ"; }
       { fingerprint = "elY15tXap1tddxbBVoUoAioe1u0RDWti5rc9cauSmwo"; }
     ];
+  };
+  figboy9 = {
+    email = "figboy9@tuta.io";
+    github = "figboy9";
+    githubId = 52276064;
+    name = "figboy9";
   };
   figsoda = {
     email = "figsoda@pm.me";
@@ -8362,6 +8381,12 @@
     githubId = 287769;
     name = "Sergii Paryzhskyi";
   };
+  hehongbo = {
+    name = "Hongbo";
+    github = "hehongbo";
+    githubId = 665472;
+    matrix = "@hehongbo:matrix.org";
+  };
   heijligen = {
     email = "src@posteo.de";
     github = "heijligen";
@@ -9375,6 +9400,13 @@
     email = "jacbart@gmail.com";
     github = "jacbart";
     githubId = 7909687;
+  };
+  jacekpoz = {
+    name = "Jacek Poziemski";
+    email = "jacekpoz@proton.me";
+    matrix = "@jacekpoz:jacekpoz.pl";
+    github = "jacekpoz";
+    githubId = 64381190;
   };
   jacfal = {
     name = "Jakub Pravda";
@@ -13955,6 +13987,12 @@
     githubId = 4587373;
     name = "Mitchell Nordine";
   };
+  mithicspirit = {
+    email = "rpc01234@gmail.com";
+    github = "MithicSpirit";
+    githubId = 24192522;
+    name = "MithicSpirit";
+  };
   mjanczyk = {
     email = "m@dragonvr.pl";
     github = "mjanczyk";
@@ -16298,6 +16336,12 @@
     githubId = 29493551;
     name = "Josh Peters";
   };
+  petertriho = {
+    email = "mail@petertriho.com";
+    github = "petertriho";
+    githubId = 7420227;
+    name = "Peter Tri Ho";
+  };
   peterwilli = {
     email = "peter@codebuffet.co";
     github = "peterwilli";
@@ -17476,6 +17520,12 @@
     github = "Rampoina";
     githubId = 5653911;
     name = "Rampoina";
+  };
+  rane = {
+    email = "rane+nix@junkyard.systems";
+    github = "digitalrane";
+    githubId = 1829286;
+    name = "Rane";
   };
   ranfdev = {
     email = "ranfdev@gmail.com";
@@ -22609,6 +22659,12 @@
     github = "wexder";
     githubId = 24979302;
     name = "Vladimír Zahradník";
+  };
+  wgunderwood = {
+    email = "wg.underwood13@gmail.com";
+    github = "WGUNDERWOOD";
+    githubId = 42812654;
+    name = "William Underwood";
   };
   wheelsandmetal = {
     email = "jakob@schmutz.co.uk";
